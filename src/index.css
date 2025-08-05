@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Just+Another+Hand&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    list-style: none;
+}
+
+.home-section {
+    background-image: url("/images/hero-bg.jpg");
+}
+
+.home-section h1 span{
+    font-family: "Just Another Hand", cursive;
+    font-weight: 300;
+}
+
+.home-section h1{
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+}
+
+.home-section p{
+    font-family: "Inter", sans-serif;
+}
+
+.home-section p span{
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #F29727;
+    font-weight: 600;
+}
+.login-btn i:hover {
+    transform: rotate(-45deg);
+}
+
+.bg-img{
+    background-image: url("/images/hero.png");
+}
+
+.login-section h1{
+    font-family: "Just Another Hand", cursive;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
