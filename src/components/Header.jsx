@@ -1,13 +1,19 @@
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom"
+import { toLogout } from "../features/bookings/bookingSlice";
+import { toast } from "react-toastify";
 
-const Header = ({ isLoggedIn, setIsLoggedIn }) => {
+const Header = () => {
     const { pathname } = useLocation();
     const navigate = useNavigate();
-
+    const dispatch = useDispatch()
+    const isLoggedIn = useSelector((state) => state.bookings.isLoggedIn)
+    console.log(isLoggedIn);
+    
     const handleClick = () => {
-        setIsLoggedIn(false);
-        localStorage.setItem("isLoggedIn", JSON.stringify(false))
+        dispatch(toLogout())
         navigate("/login")
+        toast.success("Admin Logged Out Successfully !")
     }
 
     return (
@@ -28,12 +34,14 @@ const Header = ({ isLoggedIn, setIsLoggedIn }) => {
                             <li>
                                 <Link to={"/contact"} className={`${pathname == "/contact" ? "text-[#73B458]" : "text-white"}`}>Contact</Link>
                             </li>
+                            {isLoggedIn && (<Link to={"/trips"} className={`${pathname == "/trips" ? "text-[#73B458]" : "text-white"}`} >Trips</Link>)}
                         </ul>
                     </div>
                     {
                         isLoggedIn ? <button onClick={handleClick} type="button" className="login-btn flex items-center gap-4 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300">
                             Logout
-                            <i className="bi bi-arrow-right-circle-fill text-xl" />Logout</button> :
+                            <i className="bi bi-arrow-right-circle-fill text-xl" />
+                        </button> :
                             <button onClick={() => {
                                 navigate("/login")
                             }} type="button" className="login-btn flex items-center gap-4 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300">

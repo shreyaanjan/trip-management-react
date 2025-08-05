@@ -1,22 +1,36 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
+import { useDispatch, useSelector } from "react-redux"
+import { loginDetails } from "../features/bookings/bookingSlice"
+import { useNavigate } from "react-router-dom"
 
-const Login = ({ setIsLoggedIn }) => {
-    const [input, setInput] = useState({email: "", password: ""})
-
+const Login = () => {
+    const [input, setInput] = useState({ email: "", password: "" })
+    const [ifLogin, setIfLogin] = useState(false)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const isLoggedIn = useSelector((state) => state.bookings.isLoggedIn)
+   
     const handleChange = (e) => {
-        setInput({...input, [e.target.id] : e.target.value})
+        setInput({ ...input, [e.target.id]: e.target.value })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        if(input.email == "admin@gmail.com" && input.password == "admin@123"){
-            setIsLoggedIn(true)
-            localStorage.setItem("isLoggedIn", JSON.stringify(true))
-            toast.success
-        }
+        setIfLogin(true)
+        dispatch(loginDetails(input));
     }
+    
+    useEffect(() => {
+        if(!ifLogin) return
+
+        if(isLoggedIn == true){
+            toast.success("Admin Logged In Successfully !");
+            navigate("/trips")
+        } else if(isLoggedIn == false) {
+            toast.error("Invalid Email Id or Password !")
+        }
+    }, [isLoggedIn, navigate, ifLogin])
 
     return (
         <section className="home-section login-section pt-10">
