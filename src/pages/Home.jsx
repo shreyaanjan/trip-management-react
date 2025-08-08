@@ -1,6 +1,6 @@
 const Home = () => {
     return (
-        <section className="home-section h-screen pt-32">
+        <section className="bg-[#11221c] home-section h-screen pt-32">
             <div className="bg-img">
                 <div className="container mx-auto">
                     <h1 className="text-center text-white text-7xl capitalize">

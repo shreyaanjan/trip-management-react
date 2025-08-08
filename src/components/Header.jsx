@@ -17,7 +17,7 @@ const Header = () => {
     }
 
     return (
-        <header className="absolute w-full">
+        <header className="fixed top-0 left-0 w-full z-50 bg-[#11221c]">
             <nav className="container mx-auto">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <Link to={"/"} className="flex items-center space-x-3 rtl:space-x-reverse">

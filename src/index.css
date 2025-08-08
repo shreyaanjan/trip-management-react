@@ -7,40 +7,46 @@
 * {
     list-style: none;
 }
-
+/* 
 .home-section {
     background-image: url("/images/hero-bg.jpg");
-}
+    background-size: cover;
+    background-position: center;
+} */
 
-.home-section h1 span{
+.home-section h1 span {
     font-family: "Just Another Hand", cursive;
     font-weight: 300;
 }
 
-.home-section h1{
+.home-section h1 {
     font-family: "Manrope", sans-serif;
     font-weight: 700;
 }
 
-.home-section p{
+.home-section p {
     font-family: "Inter", sans-serif;
 }
 
-.home-section p span{
+.home-section p span {
     padding: 5px 10px;
     border-radius: 20px;
     background-color: #F29727;
     font-weight: 600;
 }
+
 .login-btn i:hover {
     transform: rotate(-45deg);
 }
 
-.bg-img{
+.bg-img {
     background-image: url("/images/hero.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
 }
 
-.login-section h1{
+.login-section h1 {
     font-family: "Just Another Hand", cursive;
     font-weight: normal;
     letter-spacing: 1px;

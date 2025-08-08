@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const bookingSlice = createSlice({
-    name: "Bookings",
+    name: "bookings",
     initialState: {
         list: [],
         isLoggedIn: JSON.parse(localStorage.getItem("isLoggedIn")) || false,

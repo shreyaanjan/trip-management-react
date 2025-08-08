@@ -6,6 +6,7 @@ import Login from "./pages/Login"
 import Header from "./components/Header"
 import { ToastContainer } from "react-toastify"
 import Trips from "./pages/Trips"
+import AddTrips from "./pages/AddTrips"
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/trips" element={<Trips />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/add-trips" element={<AddTrips />} />
             </Routes>
             <ToastContainer />
         </BrowserRouter>
