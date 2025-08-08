@@ -7,7 +7,7 @@ const Trips = () => {
     const navigate = useNavigate()
 
     return (
-        <section className="mt-24">
+        <section className="pt-[120px]">
             <div className="container mx-auto">
                 <div className="flex items-center justify-between">
                     <h2>Trip Details</h2>

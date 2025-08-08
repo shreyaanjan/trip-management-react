@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 import Home from "./pages/Home"
 import Services from "./pages/Services"
 import Contact from "./pages/Contact"
@@ -9,8 +9,10 @@ import Trips from "./pages/Trips"
 import AddTrips from "./pages/AddTrips"
 
 const App = () => {
+    
     return (
         <BrowserRouter>
+        
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -20,6 +22,7 @@ const App = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/add-trips" element={<AddTrips />} />
             </Routes>
+        
             <ToastContainer />
         </BrowserRouter>
     )

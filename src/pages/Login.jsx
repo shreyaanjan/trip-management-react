@@ -2,11 +2,10 @@ import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 import { useDispatch, useSelector } from "react-redux"
 import { loginDetails } from "../features/bookings/bookingSlice"
-import { useNavigate } from "react-router-dom"
+import { Navigate, useNavigate } from "react-router-dom"
 
 const Login = () => {
     const [input, setInput] = useState({ email: "", password: "" })
-    const [ifLogin, setIfLogin] = useState(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const isLoggedIn = useSelector((state) => state.bookings.isLoggedIn)
@@ -17,20 +16,9 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setIfLogin(true)
         dispatch(loginDetails(input));
+        navigate("/trips")
     }
-    
-    useEffect(() => {
-        if(!ifLogin) return
-
-        if(isLoggedIn == true){
-            toast.success("Admin Logged In Successfully !");
-            navigate("/trips")
-        } else if(isLoggedIn == false) {
-            toast.error("Invalid Email Id or Password !")
-        }
-    }, [isLoggedIn, navigate, ifLogin])
 
     return (
         <section className="home-section login-section pt-10">

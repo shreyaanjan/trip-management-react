@@ -7,6 +7,7 @@
 * {
     list-style: none;
 }
+
 /* 
 .home-section {
     background-image: url("/images/hero-bg.jpg");
@@ -39,11 +40,20 @@
     transform: rotate(-45deg);
 }
 
+.back-color-image {
+    background-image: url('../public/images/hero-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+}
+
 .bg-img {
     background-image: url("/images/hero.png");
     background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
 }
 
 .login-section h1 {

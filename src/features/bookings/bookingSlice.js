@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 const bookingSlice = createSlice({
     name: "bookings",
     initialState: {
@@ -7,16 +9,20 @@ const bookingSlice = createSlice({
     },
     reducers: {
         loginDetails: (state, action) => {
+           
             const { email, password } = action.payload
             if (email == "admin@gmail.com" && password == "admin@123") {
                 state.isLoggedIn = true
                 localStorage.setItem("isLoggedIn", JSON.stringify(true))
+                toast.success("Admin Logged In Successfully !");
+                
             } else {
-                state.isLoggedIn = false 
+                state.isLoggedIn = false
                 localStorage.setItem("isLoggedIn", JSON.stringify(false))
+                toast.error("Invalid Email Id or Password !")
             }
         },
-        toLogout : (state, action) => {
+        toLogout: (state) => {
             state.isLoggedIn = false;
             localStorage.setItem("isLoggedIn", JSON.stringify(false))
         },
