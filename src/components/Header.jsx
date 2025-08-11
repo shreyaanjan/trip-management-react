@@ -8,8 +8,7 @@ const Header = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch()
     const isLoggedIn = useSelector((state) => state.bookings.isLoggedIn)
-    console.log(isLoggedIn);
-    
+
     const handleClick = () => {
         dispatch(toLogout())
         navigate("/login")
@@ -17,7 +16,7 @@ const Header = () => {
     }
 
     return (
-        <header className={`${pathname !=='/' ? "bg-[#11221c]" : "mt-[40px]" } absolute w-full z-50 `} >
+        <header className={`${pathname !== '/' ? "bg-[#11221c]" : "mt-[40px]"} absolute w-full z-50 `} >
             <nav className="container mx-auto">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <Link to={"/"} className="flex items-center space-x-3 rtl:space-x-reverse">

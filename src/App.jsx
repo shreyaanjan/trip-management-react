@@ -7,6 +7,7 @@ import Header from "./components/Header"
 import { ToastContainer } from "react-toastify"
 import Trips from "./pages/Trips"
 import AddTrips from "./pages/AddTrips"
+import EditTrips from "./pages/EditTrips"
 
 const App = () => {
     
@@ -21,6 +22,7 @@ const App = () => {
                 <Route path="/trips" element={<Trips />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/add-trips" element={<AddTrips />} />
+                <Route path="/edit-trips/:id" element={<EditTrips />} />
             </Routes>
         
             <ToastContainer />

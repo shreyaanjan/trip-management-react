@@ -1,4 +1,13 @@
+import { useDispatch } from "react-redux"
+import { Link } from "react-router-dom"
+import { deleteBookings } from "../features/bookings/bookingSlice"
+
 const TripsTable = ({ trips }) => {
+    const dispatch = useDispatch()
+
+    const handleDelete = (id) => {
+        dispatch(deleteBookings(id))
+    }
     return (
         <div>
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -27,10 +36,10 @@ const TripsTable = ({ trips }) => {
                     </thead>
                     <tbody>
                         {
-                            trips.map((trip) => {
+                            trips.map((trip, idx) => {
                                 return <tr key={trip.id} className="odd:bg-white even:bg-gray-50 border-b border-gray-200">
                                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        {trip.destination}
+                                        {trip.place}
                                     </th>
                                     <td className="px-6 py-4">
                                         {trip.days}
@@ -45,7 +54,10 @@ const TripsTable = ({ trips }) => {
                                         {trip.price}
                                     </td>
                                     <td className="px-6 py-4">
-                                        <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        <div className="flex items-center gap-4">
+                                            <Link to={`/edit-trips/${trip.id}`} className="font-medium text-green-600 hover:underline">Edit</Link>
+                                            <button onClick={() => handleDelete(trip.id)} className="font-medium text-red-600 hover:underline">Delete</button>
+                                        </div>
                                     </td>
                                 </tr>
                             })

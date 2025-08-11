@@ -1,21 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { useNavigate } from "react-router-dom";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+
 const bookingSlice = createSlice({
     name: "bookings",
     initialState: {
-        list: [],
+        list: JSON.parse(localStorage.getItem("list")) || [],
         isLoggedIn: JSON.parse(localStorage.getItem("isLoggedIn")) || false,
     },
     reducers: {
         loginDetails: (state, action) => {
-           
             const { email, password } = action.payload
             if (email == "admin@gmail.com" && password == "admin@123") {
                 state.isLoggedIn = true
                 localStorage.setItem("isLoggedIn", JSON.stringify(true))
                 toast.success("Admin Logged In Successfully !");
-                
             } else {
                 state.isLoggedIn = false
                 localStorage.setItem("isLoggedIn", JSON.stringify(false))
@@ -26,14 +24,27 @@ const bookingSlice = createSlice({
             state.isLoggedIn = false;
             localStorage.setItem("isLoggedIn", JSON.stringify(false))
         },
-        addBookings: () => {
-
+        addBookings: (state, action) => {
+            state.list.push({ id: nanoid(), ...action.payload })
+            localStorage.setItem("list", JSON.stringify(state.list))
         },
-        deleteBookings: () => {
-
+        deleteBookings: (state, action) => {
+            const newTrip = state.list.filter((trip) => {
+                return trip.id != action.payload
+            })
+            state.list = newTrip
+            localStorage.setItem("list", JSON.stringify(state.list))
+        },
+        updateBookings: (state, action) => {
+            const { id, ...data } = action.payload;
+            const idx = state.list.findIndex(trip => trip.id == id)
+            if(idx != -1){
+                state.list[idx] = {id, ...data};
+            }
+            localStorage.setItem("list", JSON.stringify(state.list))
         }
     }
 })
 
-export const { loginDetails, toLogout, addBookings, deleteBookings } = bookingSlice.actions
+export const { loginDetails, toLogout, addBookings, deleteBookings, updateBookings } = bookingSlice.actions
 export default bookingSlice.reducer

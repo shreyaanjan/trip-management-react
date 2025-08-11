@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 const Trips = () => {
     const trips = useSelector(store => store.bookings.list)
     const navigate = useNavigate()
-
+    console.log(trips);
     return (
         <section className="pt-[120px]">
             <div className="container mx-auto">

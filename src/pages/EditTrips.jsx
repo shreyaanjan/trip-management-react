@@ -1,16 +1,33 @@
-import { useState } from "react"
-import { useDispatch } from "react-redux"
-import { useNavigate } from "react-router-dom"
-import { addBookings } from "../features/bookings/bookingSlice"
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useNavigate, useParams } from "react-router-dom"
+import { updateBookings } from "../features/bookings/bookingSlice"
 
-const AddTrips = () => {
+const EditTrips = () => {
     const [input, setInput] = useState({
         place: '', days: '', person: '', price: '', season: '',
     })
     const [errors, setErrors] = useState({})
 
+    const trips = useSelector(store => store.bookings.list)
+
+    const {id} = useParams()
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
+    useEffect(() => {
+        if(id){
+            const updatedTrip = trips.find((trip) => {
+                return trip.id === id;
+            })
+
+            if(!updatedTrip){
+                navigate("/")
+                return
+            }
+            setInput(updatedTrip)
+        }
+    }, [id])
 
     const handleChange = (e) => {
         setInput({ ...input, [e.target.id]: e.target.value })
@@ -44,14 +61,14 @@ const AddTrips = () => {
         setErrors(validateErrors)
 
         if (Object.keys(validateErrors).length > 0) return;
-        dispatch(addBookings(input))
+        dispatch(updateBookings(input))
         navigate("/trips")
     }
 
     return (
         <div className="pt-[100px]">
             <div className="container mx-auto">
-                <h2 className="text-center">Add Trip</h2>
+                <h2 className="text-center">Edit Trip</h2>
                 <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
                     <div className="mb-5">
                         <label htmlFor="place" className="block mb-2 text-sm font-medium text-gray-900">Destination : </label>
@@ -108,11 +125,14 @@ const AddTrips = () => {
                         <input type="number" onChange={handleChange} value={input.price} id="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                         {errors.price && <p className="text-red-500 text-sm mt-1">{errors.price}</p>}
                     </div>
-                    <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Add</button>
+                    <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Update</button>
                 </form>
             </div>
+
+
         </div>
+
     )
 }
 
-export default AddTrips
+export default EditTrips
