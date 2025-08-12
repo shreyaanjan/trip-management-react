@@ -2,7 +2,7 @@ const Home = () => {
     return (
         <div className="p-[30px] overflow-hidden">
             <section className="back-color-image rounded-2xl overflow-hidden home-section h-screen pt-32">
-                <div className="bg-img  ">
+                <div className="bg-img">
                     <div className="container mx-auto">
                         <h1 className="text-center text-white text-7xl capitalize">
                             <span className="capitalize text-8xl">explore the</span> <br />
@@ -57,7 +57,6 @@ const Home = () => {
                 </div>
             </section>
         </div>
-
     )
 }
 

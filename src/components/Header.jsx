@@ -28,12 +28,12 @@ const Header = () => {
                                 <Link to={"/"} className={`${pathname == "/" ? "text-[#73B458]" : "text-white"}`}>Home</Link>
                             </li>
                             <li>
-                                <Link to={"/services"} className={`${pathname == "/services" ? "text-[#73B458]" : "text-white"}`}>Services</Link>
+                                <Link to={"/tours"} className={`${pathname == "/tours" ? "text-[#73B458]" : "text-white"}`}>Tours</Link>
                             </li>
                             <li>
                                 <Link to={"/contact"} className={`${pathname == "/contact" ? "text-[#73B458]" : "text-white"}`}>Contact</Link>
                             </li>
-                            {isLoggedIn && (<Link to={"/trips"} className={`${pathname == "/trips" ? "text-[#73B458]" : "text-white"}`} >Trips</Link>)}
+                            {isLoggedIn && (<Link to={"/trips"} className={`${pathname == "/trips" || pathname == "/add-trips" || pathname.includes("/edit-trips") ? "text-[#73B458]" : "text-white"}`} >Trips</Link>)}
                         </ul>
                     </div>
                     {

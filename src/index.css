@@ -41,7 +41,7 @@
 }
 
 .back-color-image {
-    background-image: url('../public/images/hero-bg.jpg');
+    background-image: url('../images/hero-bg.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
