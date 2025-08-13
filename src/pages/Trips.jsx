@@ -1,11 +1,17 @@
 import { useSelector } from "react-redux"
 import TripsTable from "../components/TripsTable"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import { tourCard } from "../components/tourCard"
 
 const Trips = () => {
     const trips = useSelector(store => store.bookings.list)
     const navigate = useNavigate()
-    console.log(trips);
+    const { id } = useParams();
+    let obj = tourCard.find((item,idx)=>{
+       return idx == id
+    })
+    console.log(obj);
+    
     return (
         <section className="pt-[120px]">
             <div className="container mx-auto">
@@ -16,7 +22,7 @@ const Trips = () => {
                     </div>
                 </div>
                 <div className="mt-5">
-                    <TripsTable trips={trips} />
+                    <TripsTable trips={trips} obj={obj} />
                 </div>
             </div>
         </section>

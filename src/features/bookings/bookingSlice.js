@@ -1,5 +1,7 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
+import AddTrips from "../../pages/AddTrips";
+
 
 const bookingSlice = createSlice({
     name: "bookings",
@@ -28,6 +30,10 @@ const bookingSlice = createSlice({
             state.list.push({ id: nanoid(), ...action.payload })
             localStorage.setItem("list", JSON.stringify(state.list))
         },
+        AddTrips: () => {
+            
+
+        },
         deleteBookings: (state, action) => {
             const newTrip = state.list.filter((trip) => {
                 return trip.id != action.payload
@@ -38,8 +44,8 @@ const bookingSlice = createSlice({
         updateBookings: (state, action) => {
             const { id, ...data } = action.payload;
             const idx = state.list.findIndex(trip => trip.id == id)
-            if(idx != -1){
-                state.list[idx] = {id, ...data};
+            if (idx != -1) {
+                state.list[idx] = { id, ...data };
             }
             localStorage.setItem("list", JSON.stringify(state.list))
         }

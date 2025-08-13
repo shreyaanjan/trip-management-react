@@ -1,20 +1,17 @@
-import ToursCard from "../components/ToursCard"
+import { tourCard } from "../components/tourCard"
+import  ToursCard  from "../components/ToursCard"
+
 
 const Tours = () => {
-    let tourCard = [
-        {
-            img: "/images/tour-1.jpg",
-            title: "White Boats on Body of Water",
-            country: "County, Croatia",
-            desc: "Rising dramatically 200 meters above the surrounding jungle, this ancient royal",
-            
-        }
-    ]
     return (
         <section className="pt-[100px]">
             <div className="container mx-auto">
-                <div className="flex flex-wrap py-[40x]">
-                    <ToursCard />
+                <div className="flex flex-wrap   py-[40px]">
+                    {
+                        tourCard.map((tour, idx)=>{
+                            return  <ToursCard key={idx} id={idx} img={tour.img} title={tour.title} country={tour.country} desc={tour.desc} price={tour.price} place={tour.place} guest={tour.guest} />
+                        })
+                    }
                 </div>
             </div>
         </section>

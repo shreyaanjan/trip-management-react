@@ -16,8 +16,12 @@ const Contact = () => {
         }
     ]
     return (
-        <section className="pt-[100px]">
-            <div className="container mx-auto ">
+        <section className="pt-[100px] flex items-center flex-col h-screen">
+                <div className="mb-5 relative contact-bg">
+                    <img src="/images/text-bg.png" width={'40%'} alt="" />
+                    <span className="font-semibold text-white absolute text-6xl contact-text top-[52%] tracking-wider left-[15%]">CONTACT</span>
+                </div>
+            <div className="container mx-auto pt-10">
                 <div className="flex gap-5">
                     <div className="w-4/12">
                         <div className="contact-title">
@@ -38,7 +42,7 @@ const Contact = () => {
                         </div>
                     </div>
                     <div className="w-4/12">
-                        <div>
+                        <div className="flex justify-center">
                             <img src="/images/contact-img.jpg" className="rounded-full" alt="plane" />
                         </div>
                     </div>
@@ -50,10 +54,8 @@ const Contact = () => {
                                 })
                             }
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </section>
     )

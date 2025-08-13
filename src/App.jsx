@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "./pages/Home"
 import Contact from "./pages/Contact"
 import Login from "./pages/Login"
@@ -19,7 +19,8 @@ const App = () => {
                 <Route path="/tours" element={<Tours />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<ProtectedRoute Component={Login} />} />
-                <Route path="/trips" element={<ProtectedRoute Component={Trips} />} />
+                <Route path="/trips/" element={<ProtectedRoute Component={Trips} />} />
+                <Route path="/trips/:id" element={<Trips/>} />
                 <Route path="/add-trips" element={<ProtectedRoute Component={AddTrips} />} />
                 <Route path="/edit-trips/:id" element={<ProtectedRoute Component={EditTrips} />} />
             </Routes>
