@@ -8,7 +8,6 @@ import Trips from "./pages/Trips"
 import AddTrips from "./pages/AddTrips"
 import EditTrips from "./pages/EditTrips"
 import ProtectedRoute from "./components/ProtectedRoute"
-import ProtectedRouteTwo from "./components/ProtectedRouteTwo"
 import Tours from "./pages/Tours"
 
 const App = () => {
@@ -19,7 +18,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/tours" element={<Tours />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<ProtectedRoute Component={Login} />} />
                 <Route path="/trips" element={<ProtectedRoute Component={Trips} />} />
                 <Route path="/add-trips" element={<ProtectedRoute Component={AddTrips} />} />
                 <Route path="/edit-trips/:id" element={<ProtectedRoute Component={EditTrips} />} />

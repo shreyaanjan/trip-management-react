@@ -8,13 +8,6 @@
     list-style: none;
 }
 
-/* 
-.home-section {
-    background-image: url("/images/hero-bg.jpg");
-    background-size: cover;
-    background-position: center;
-} */
-
 .home-section h1 span {
     font-family: "Just Another Hand", cursive;
     font-weight: 300;
@@ -60,4 +53,21 @@
     font-family: "Just Another Hand", cursive;
     font-weight: normal;
     letter-spacing: 1px;
+}
+
+.contact-title span{
+    color: #F29727;
+    font-family: "Just Another Hand", cursive;
+}
+
+.contact-title h2{
+    font-family: "Manrope", sans-serif;
+}
+
+.contact-card span{
+    font-family: "Manrope", sans-serif;
+}
+
+.contact-card p{
+    font-family: "Inter", sans-serif;
 }

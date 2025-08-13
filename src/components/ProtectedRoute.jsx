@@ -8,6 +8,8 @@ const ProtectedRoute = ({ Component }) => {
         let loginStatus = JSON.parse(localStorage.getItem("isLoggedIn")) || false
         if (!loginStatus) {
             navigate("/login")
+        } else {
+            navigate("/trips")
         }
     }, [])
 
