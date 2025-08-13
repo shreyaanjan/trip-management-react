@@ -39,7 +39,7 @@ const TripsTable = ({ trips }) => {
                             trips.map((trip, idx) => {
                                 return <tr key={trip.id} className="odd:bg-white even:bg-gray-50 border-b border-gray-200">
                                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                        {trip.place}
+                                        {trip.country}
                                     </th>
                                     <td className="px-6 py-4">
                                         {trip.days}

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-const ToursCard = ({ id, img, title, desc, country, price, place, guest }) => {
+const ToursCard = ({ id, img, title, desc, country, price, place, person, days, season }) => {
     const navigate = useNavigate()
 
     return (
@@ -10,7 +10,7 @@ const ToursCard = ({ id, img, title, desc, country, price, place, guest }) => {
                     <img src={img} alt="Diamond Beach"
                         className="rounded-xl w-full h-52 object-cover" />
                     <span className="absolute bottom-2 right-2 bg-white text-gray-800 text-sm font-medium px-3 py-1 rounded-full shadow">
-                        3 days - 2 night
+                        {days}
                     </span>
                 </div>
                 <div className="mt-4 flex items-center gap-1">
@@ -18,9 +18,12 @@ const ToursCard = ({ id, img, title, desc, country, price, place, guest }) => {
                     <span className="text-sm text-gray-600 ml-1">4.8(3k reviews)</span>
                 </div>
                 <h3 className="text-lg font-semibold mt-1">{title}</h3>
-                <div className="flex items-center gap-2 text-gray-500 text-sm mt-1">
-                    <i className="bi bi-geo-alt"></i>
-                    <span>{country}</span>
+                <div className="flex items-center justify-between text-gray-500 text-sm mt-1">
+                    <div>
+                        <i className="bi bi-geo-alt"></i>
+                        <span>{country}</span>
+                    </div>
+                    <span>{season}</span>
                 </div>
                 <p className="text-gray-500 text-sm mt-2">{desc}</p>
                 <div className="grid grid-cols-3 border rounded-xl mt-4 text-sm overflow-hidden">
@@ -40,7 +43,7 @@ const ToursCard = ({ id, img, title, desc, country, price, place, guest }) => {
                         <span className="flex items-center gap-1 text-orange-500">
                             <i className="bi bi-people"></i> Guest
                         </span>
-                        <span className="font-semibold text-lg text-gray-900">{guest}</span>
+                        <span className="font-semibold text-lg text-gray-900">{person}</span>
                     </div>
                 </div>
                 <button onClick={() => navigate(`/trips/${id}`)} className="mt-4 w-full bg-green-100 text-green-700 font-medium py-3 rounded-full flex items-center justify-center gap-2 hover:bg-green-200 transition">

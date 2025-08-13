@@ -30,8 +30,12 @@ const bookingSlice = createSlice({
             state.list.push({ id: nanoid(), ...action.payload })
             localStorage.setItem("list", JSON.stringify(state.list))
         },
-        AddTrips: () => {
-            
+        addTrips: (state, action) => {
+            if(action.payload == undefined){
+                return
+            }
+            state.list.push({ id: nanoid(), ...action.payload })
+            localStorage.setItem("list", JSON.stringify(state.list))
 
         },
         deleteBookings: (state, action) => {
@@ -52,5 +56,5 @@ const bookingSlice = createSlice({
     }
 })
 
-export const { loginDetails, toLogout, addBookings, deleteBookings, updateBookings } = bookingSlice.actions
+export const { loginDetails, toLogout, addBookings, addTrips, deleteBookings, updateBookings } = bookingSlice.actions
 export default bookingSlice.reducer

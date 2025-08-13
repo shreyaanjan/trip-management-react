@@ -9,7 +9,7 @@ const Tours = () => {
                 <div className="flex flex-wrap   py-[40px]">
                     {
                         tourCard.map((tour, idx)=>{
-                            return  <ToursCard key={idx} id={idx} img={tour.img} title={tour.title} country={tour.country} desc={tour.desc} price={tour.price} place={tour.place} guest={tour.guest} />
+                            return  <ToursCard key={idx} id={idx} img={tour.img} title={tour.title} country={tour.country} desc={tour.desc} price={tour.price} place={tour.place} person={tour.person} days={tour.days} season={tour.season} />
                         })
                     }
                 </div>

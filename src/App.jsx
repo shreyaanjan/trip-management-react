@@ -19,8 +19,8 @@ const App = () => {
                 <Route path="/tours" element={<Tours />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/login" element={<ProtectedRoute Component={Login} />} />
-                <Route path="/trips/" element={<ProtectedRoute Component={Trips} />} />
-                <Route path="/trips/:id" element={<Trips/>} />
+                <Route path="/trips" element={<ProtectedRoute Component={Trips} />} />
+                <Route path="/trips/:id" element={<ProtectedRoute Component={Trips}/>} />
                 <Route path="/add-trips" element={<ProtectedRoute Component={AddTrips} />} />
                 <Route path="/edit-trips/:id" element={<ProtectedRoute Component={EditTrips} />} />
             </Routes>

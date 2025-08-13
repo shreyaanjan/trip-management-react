@@ -5,7 +5,7 @@ import { updateBookings } from "../features/bookings/bookingSlice"
 
 const EditTrips = () => {
     const [input, setInput] = useState({
-        place: '', days: '', person: '', price: '', season: '',
+        country: '', days: '', person: '', price: '', season: '',
     })
     const [errors, setErrors] = useState({})
 
@@ -38,23 +38,23 @@ const EditTrips = () => {
 
         let validateErrors = {}
 
-        if (input.place.trim() === "") {
-            validateErrors.place = "Enter Destination !";
+        if (input.country.trim() === "") {
+            validateErrors.country = "Enter Destination !";
         }
 
-        if (input.days.trim() === "") {
+        if (input.days === "") {
             validateErrors.days = "Select Days !";
         }
-
-        if (input.person.trim() === "") {
+        
+        if (input.person === "") {
             validateErrors.person = "Enter Total Person Number !";
         }
 
-        if (input.season.trim() === "") {
+        if (input.season === "") {
             validateErrors.season = "Select Season !";
         }
 
-        if (input.price.trim() === "") {
+        if (input.price === "") {
             validateErrors.price = "Enter Price !";
         }
 
@@ -71,9 +71,9 @@ const EditTrips = () => {
                 <h2 className="text-center">Edit Trip</h2>
                 <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
                     <div className="mb-5">
-                        <label htmlFor="place" className="block mb-2 text-sm font-medium text-gray-900">Destination : </label>
-                        <input type="text" onChange={handleChange} value={input.place} id="place" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                        {errors.place && <p className="text-red-500 text-sm mt-1">{errors.place}</p>}
+                        <label htmlFor="country" className="block mb-2 text-sm font-medium text-gray-900">Destination : </label>
+                        <input type="text" onChange={handleChange} value={input.country} id="country" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        {errors.country && <p className="text-red-500 text-sm mt-1">{errors.country}</p>}
                     </div>
                     <div className="mb-5">
                         <label htmlFor="days" className="block mb-2 text-sm font-medium text-gray-900">Days : </label>

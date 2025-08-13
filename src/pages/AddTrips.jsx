@@ -5,7 +5,7 @@ import { addBookings } from "../features/bookings/bookingSlice"
 
 const AddTrips = () => {
     const [input, setInput] = useState({
-        place: '', days: '', person: '', price: '', season: '',
+        country: '', days: '', person: '', price: '', season: '',
     })
     const [errors, setErrors] = useState({})
 
@@ -21,8 +21,8 @@ const AddTrips = () => {
 
         let validateErrors = {}
 
-        if (input.place.trim() === "") {
-            validateErrors.place = "Enter Destination !";
+        if (input.country.trim() === "") {
+            validateErrors.country = "Enter Destination !";
         }
 
         if (input.days.trim() === "") {
@@ -54,21 +54,21 @@ const AddTrips = () => {
                 <h2 className="text-center">Add Trip</h2>
                 <form onSubmit={handleSubmit} className="max-w-sm mx-auto">
                     <div className="mb-5">
-                        <label htmlFor="place" className="block mb-2 text-sm font-medium text-gray-900">Destination : </label>
-                        <input type="text" onChange={handleChange} value={input.place} id="place" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
-                        {errors.place && <p className="text-red-500 text-sm mt-1">{errors.place}</p>}
+                        <label htmlFor="country" className="block mb-2 text-sm font-medium text-gray-900">Destination : </label>
+                        <input type="text" onChange={handleChange} value={input.country} id="country" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
+                        {errors.country && <p className="text-red-500 text-sm mt-1">{errors.country}</p>}
                     </div>
                     <div className="mb-5">
                         <label htmlFor="days" className="block mb-2 text-sm font-medium text-gray-900">Days : </label>
                         <select id="days" onChange={handleChange} value={input.days} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             <option valuw="">Select Days</option>
-                            <option value="1">01</option>
-                            <option value="2">02</option>
-                            <option value="3">03</option>
-                            <option value="4">04</option>
-                            <option value="5">05</option>
-                            <option value="6">06</option>
-                            <option value="7">07</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
                         </select>
                         {errors.days && <p className="text-red-500 text-sm mt-1">{errors.days}</p>}
                     </div>
