@@ -9,15 +9,20 @@ const Login = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const isLoggedIn = useSelector((state) => state.bookings.isLoggedIn)
-   
+
     const handleChange = (e) => {
         setInput({ ...input, [e.target.id]: e.target.value })
     }
 
+    useEffect(() => {
+        if (isLoggedIn) {
+            navigate("/trips")
+        }
+    }, [isLoggedIn])
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(loginDetails(input));
-        navigate("/trips")
+        dispatch(loginDetails(input));  
     }
 
     return (

@@ -2,8 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { toLogout } from "../features/bookings/bookingSlice";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 const Header = () => {
+    const [menu, setMenu] = useState(false);
     const { pathname } = useLocation();
     const navigate = useNavigate();
     const dispatch = useDispatch()
@@ -36,6 +38,13 @@ const Header = () => {
                             {isLoggedIn && (<Link to={"/trips"} className={`${pathname == "/trips" || pathname == "/add-trips" || pathname.includes("/edit-trips") ? "text-[#73B458]" : "text-white"}`} >Trips</Link>)}
                         </ul>
                     </div>
+                    <div className="flex items-center gap-5">
+                        <div className="md:hidden">
+                            <button onClick={() => setMenu(!menu)} className="text-white text-2xl">
+                                {menu ? '✕' : '☰'}
+                            </button>
+                        </div>
+                    </div>
                     {
                         isLoggedIn ? <button onClick={handleClick} type="button" className="login-btn flex items-center gap-4 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300">
                             Logout
@@ -50,6 +59,22 @@ const Header = () => {
                     }
                 </div>
             </nav>
+            {menu && (
+                <div className="md:hidden fixed top-[90px] left-0 right-0 bottom-0 bg-[#11221c] z-50 p-6 overflow-y-auto">
+                    <ul className="flex flex-col space-y-4 p-2 font-semibold">
+                        <li>
+                            <Link to={"/"} className={`${pathname == "/" ? "text-[#73B458]" : "text-white"}`}>Home</Link>
+                        </li>
+                        <li>
+                            <Link to={"/tours"} className={`${pathname == "/tours" ? "text-[#73B458]" : "text-white"}`}>Tours</Link>
+                        </li>
+                        <li>
+                            <Link to={"/contact"} className={`${pathname == "/contact" ? "text-[#73B458]" : "text-white"}`}>Contact</Link>
+                        </li>
+                        {isLoggedIn && (<Link to={"/trips"} onClick={() => setMenu(false)} className={`${pathname == "/trips" || pathname == "/add-trips" || pathname.includes("/edit-trips") ? "text-[#73B458]" : "text-white"}`} >Trips</Link>)}
+                    </ul>
+                </div>
+            )}
         </header>
     )
 }

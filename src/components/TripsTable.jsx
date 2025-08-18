@@ -55,8 +55,8 @@ const TripsTable = ({ trips }) => {
                                     </td>
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-4">
-                                            <Link to={`/edit-trips/${trip.id}`} className="font-medium text-green-600 hover:underline">Edit</Link>
-                                            <button onClick={() => handleDelete(trip.id)} className="font-medium text-red-600 hover:underline">Delete</button>
+                                            <Link to={`/edit-trips/${trip.id}`} className="text-base text-green-600 hover:underline"><i className="bi bi-pencil-square"></i></Link>
+                                            <button onClick={() => handleDelete(trip.id)} className="text-base text-red-600 hover:underline"><i className="bi bi-trash3-fill"></i></button>
                                         </div>
                                     </td>
                                 </tr>

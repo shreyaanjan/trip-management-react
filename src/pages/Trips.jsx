@@ -20,10 +20,10 @@ const Trips = () => {
     }, [])
 
     return (
-        <section className="pt-[120px]">
+        <section className="trip pt-[120px]">
             <div className="container mx-auto">
                 <div className="flex items-center justify-between">
-                    <h2>Trip Details</h2>
+                    <h2 className="text-3xl text-[#F29727]">Trip Details</h2>
                     <div>
                         <button type="button" onClick={() => navigate("/add-trips")} className="text-white bg-[#ff5d22] hover:bg-[#e24d14] font-medium rounded-md text-sm px-4 py-2 flex items-center gap-2 transition">Add Trip</button>
                     </div>

@@ -50,6 +50,9 @@ const AddTrips = () => {
 
     return (
         <div className="add-trip min-h-screen flex items-center justify-center bg-[#11221C] pt-[100px]">
+            <div>
+                <img src="/images/shape3.png" className="scale-x-[-1]" alt="aeroplane" />
+            </div>
             <div className="w-full lg:w-1/2 flex item-center justify-center p-5">
                 <div className="w-full bg-white rounded-md max-w-md p-8">
                     <div className="container mx-auto">
@@ -111,10 +114,13 @@ const AddTrips = () => {
                                 {errors.price && <p className="text-red-500 text-sm mt-1">{errors.price}</p>}
                             </div>
                             <button type="submit" className="text-white bg-[#F29727] hover:bg-[#e47e02]
-                            focus:ring-4 focus:outline-none focus:ring-orange-300-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Add Trip</button>
+                            focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Add Trip</button>
                         </form>
                     </div>
                 </div>
+            </div>
+            <div>
+                <img src="/images/shape3.png" alt="aeroplane" />
             </div>
         </div>
     )
