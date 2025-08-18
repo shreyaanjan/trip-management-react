@@ -4,8 +4,8 @@ const ToursCard = ({ id, img, title, desc, country, price, place, person, days, 
     const navigate = useNavigate()
 
     return (
-        <div className="px-[15px] py-[15px] w-3/12">
-            <div className=" bg-white rounded-2xl  shadow p-4">
+        <div className="px-[15px] py-[15px] lg:w-3/12 md:w-6/12 ">
+            <div className=" bg-white rounded-2xl  shadow p-4 h-full">
                 <div className="relative">
                     <img src={img} alt="Diamond Beach"
                         className="rounded-xl w-full h-52 object-cover" />

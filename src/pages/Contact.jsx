@@ -23,8 +23,9 @@ const Contact = () => {
                 </div>
             <div className="container mx-auto pt-10">
                 <div className="flex gap-5">
-                    <div className="w-4/12">
-                        <div className="contact-title">
+                    <div className="lg:w-4/12 w-6/12">
+                        <div className="flex flex-col ">
+                            <div className="contact-title">
                             <span className="text-3xl">Contact Us</span>
                             <h2 className="text-5xl my-4 font-semibold">Adventure Begins Here Contact Us</h2>
                         </div>
@@ -40,14 +41,15 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
-                    <div className="w-4/12">
+                    <div className="lg:w-4/12 lg:block hidden">
                         <div className="flex justify-center">
                             <img src="/images/contact-img.jpg" className="rounded-full" alt="plane" />
                         </div>
                     </div>
-                    <div className="w-4/12">
-                        <div className="contact-card flex flex-col gap-5">
+                    <div className="lg:w-4/12 w-6/12">
+                        <div className="contact-card  flex flex-col gap-5">
                             {
                                 cardContent.map((card, idx) => {
                                     return <ContactCard key={idx} icon={card.icon} title={card.title} desc={card.desc} desc2={card.desc2} />

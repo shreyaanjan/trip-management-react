@@ -1,7 +1,7 @@
 const ContactCard = ({ icon, title, desc, desc2 }) => {
     return (
         <div className="py-[40px] px-[30px] bg-[#EAF4E6] rounded-2xl">
-            <div className="icon text-5xl mb-4 text-[#73B458]">
+            <div className="icon text-5xl mb-4  text-[#73B458]">
                 <i className={icon}></i>
             </div>
             <div className="content">
