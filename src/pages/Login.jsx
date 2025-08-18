@@ -21,7 +21,7 @@ const Login = () => {
     }
 
     return (
-        <section className="home-section login-section pt-10">
+        <section className="home-section login-section">
             <div className="min-h-screen flex items-center justify-center bg-[#11221C]">
                 <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
                     <div className="w-full bg-white rounded-md shadow-md max-w-md p-8">
@@ -39,12 +39,6 @@ const Login = () => {
                                     placeholder="*********" className="bg-gray-100 border border-gray-200 text-gray-900 text-sm rounded-sm block w-full p-3 focus:outline-none focus:ring-2 focus:ring-orange-500"
                                 />
                             </div>
-                            {/* <div className="flex items-center justify-between text-sm text-gray-600">
-                                <label>
-                                    <input type="checkbox" className="mr-1" /> Remember Me?
-                                </label>
-                                <a href="#" className="text-orange-500 hover:underline">Forgot your Password?</a>
-                            </div> */}
                             <button
                                 type="submit"
                                 className="w-full bg-[#11221C] hover:bg-[#73B458] text-white text-sm font-semibold py-3 rounded-sm transition-all duration-300">

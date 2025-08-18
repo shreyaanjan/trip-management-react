@@ -55,23 +55,24 @@
     letter-spacing: 1px;
 }
 
-.contact-title span{
+.contact-title span {
     color: #F29727;
     font-family: "Just Another Hand", cursive;
 }
 
-.contact-title h2{
+.contact-title h2 {
     font-family: "Manrope", sans-serif;
 }
 
-.contact-card span{
+.contact-card span {
     font-family: "Manrope", sans-serif;
 }
 
-.contact-card p{
+.contact-card p {
     font-family: "Inter", sans-serif;
 }
-.contact-bg{
+
+.contact-bg {
     background-image: url('/images/page-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -80,6 +81,16 @@
     border-radius: 20px;
     overflow: hidden;
 }
-.contact-text{
+
+.contact-text {
     font-family: "Just Another Hand", cursive;
+}
+
+.tour-title {
+    font-family: "Just Another Hand", cursive;
+}
+
+.add-trip h2 {
+    font-family: "Just Another Hand", cursive;
+    
 }

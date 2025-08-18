@@ -10,7 +10,7 @@ const ToursCard = ({ id, img, title, desc, country, price, place, person, days, 
                     <img src={img} alt="Diamond Beach"
                         className="rounded-xl w-full h-52 object-cover" />
                     <span className="absolute bottom-2 right-2 bg-white text-gray-800 text-sm font-medium px-3 py-1 rounded-full shadow">
-                        {days}
+                        {days} days
                     </span>
                 </div>
                 <div className="mt-4 flex items-center gap-1">
