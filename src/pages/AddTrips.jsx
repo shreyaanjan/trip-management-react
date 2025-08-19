@@ -53,8 +53,8 @@ const AddTrips = () => {
             <div className="hidden lg:block">
                 <img src="/images/shape3.png" className="scale-x-[-1]" alt="aeroplane" />
             </div>
-            <div className="w-full lg:w-1/2 flex item-center justify-center p-5">
-                <div className="w-full bg-white rounded-md max-w-md p-8">
+            <div className="w-full lg:w-1/2 flex item-center justify-center md:p-5">
+                <div className="w-full bg-white md:rounded-md max-w-md p-8">
                     <div className="container mx-auto">
                         <h2 className="mb-5 text-3xl text-[#F29727]">Plan A Getaway</h2>
                         <form onSubmit={handleSubmit} className="max-w-sm mx-auto">

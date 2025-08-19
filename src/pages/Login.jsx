@@ -28,8 +28,8 @@ const Login = () => {
     return (
         <section className="home-section login-section">
             <div className="min-h-screen flex items-center justify-center bg-[#11221C]">
-                <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
-                    <div className="w-full bg-white rounded-md shadow-md max-w-md p-8">
+                <div className="w-full lg:w-1/2 flex items-center justify-center md:p-8">
+                    <div className="w-full bg-white md:rounded-md shadow-md max-w-md p-8">
                         <h1 className="text-4xl text-[#F29727] mb-6 text-center">Login Account</h1>
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <div>
