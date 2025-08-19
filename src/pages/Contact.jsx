@@ -17,13 +17,13 @@ const Contact = () => {
     ]
     return (
         <section className="pt-[100px] flex items-center flex-col h-screen">
-                <div className="mb-5 relative contact-bg">
+                <div className="mb-5 sm:hidden relative contact-bg">
                     <img src="/images/text-bg.png" width={'40%'} alt="" />
                     <span className="font-semibold text-white absolute text-6xl contact-text top-[52%] tracking-wider left-[15%]">CONTACT</span>
                 </div>
             <div className="container mx-auto pt-10">
-                <div className="flex gap-5">
-                    <div className="lg:w-4/12 w-6/12">
+                <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-5">
+                    <div className="md:w-4/12 w-full">
                         <div className="flex flex-col ">
                             <div className="contact-title">
                             <span className="text-3xl">Contact Us</span>
@@ -43,13 +43,13 @@ const Contact = () => {
                         </div>
                         </div>
                     </div>
-                    <div className="lg:w-4/12 lg:block hidden">
+                    <div className="md:w-4/12 w-full hidden md:flex justify-center">
                         <div className="flex justify-center">
                             <img src="/images/contact-img.jpg" className="rounded-full" alt="plane" />
                         </div>
                     </div>
-                    <div className="lg:w-4/12 w-6/12">
-                        <div className="contact-card  flex flex-col gap-5">
+                    <div className="md:w-4/12 w-full">
+                        <div className="contact-card flex flex-col gap-5">
                             {
                                 cardContent.map((card, idx) => {
                                     return <ContactCard key={idx} icon={card.icon} title={card.title} desc={card.desc} desc2={card.desc2} />

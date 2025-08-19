@@ -66,7 +66,7 @@ const EditTrips = () => {
 
     return (
         <div className="edit-trip min-h-screen flex items-center justify-center bg-[#11221C] pt-[100px]">
-            <div>
+            <div className="hidden lg:block">
                 <img src="/images/shape3.png" className="scale-x-[-1]" alt="aeroplane" />
             </div>
             <div className="w-full lg:w-1/2 flex item-center justify-center p-5">
@@ -99,7 +99,7 @@ const EditTrips = () => {
                                 {errors.person && <p className="text-red-500 text-sm mt-1">{errors.person}</p>}
                             </div>
                             <div className="mb-5">
-                                <div className="flex gap-4">
+                                <div className="flex flex-wrap sm:flex-nowrap gap-4">
                                     <label className="flex items-center gap-1">
                                         <input id="season" type="radio" name="season" value="summer"
                                             onChange={handleChange} checked={input.season === "summer"}
@@ -129,12 +129,12 @@ const EditTrips = () => {
                                 <input type="number" onChange={handleChange} value={input.price} id="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" />
                                 {errors.price && <p className="text-red-500 text-sm mt-1">{errors.price}</p>}
                             </div>
-                            <button type="submit" className="text-white bg-[#F29727] hover:bg-[#e47e02] focus:ring-4 focus:outline-none focus:ring-orange-100 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Update Trip</button>
+                            <button type="submit" className="text-white bg-[#F29727] hover:bg-[#e47e02] focus:ring-4 focus:outline-none focus:ring-orange-100 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center">Update Trip</button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="hidden lg:block">
                 <img src="/images/shape3.png" alt="aeroplane" />
             </div>
         </div>

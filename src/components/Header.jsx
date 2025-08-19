@@ -20,20 +20,20 @@ const Header = () => {
     return (
         <header className={`${pathname !== '/' ? "bg-[#11221c]" : "md:mt-[40px] m-0"} absolute w-full z-50 `} >
             <nav className="container mx-auto">
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
                     <Link to={"/"} className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="/images/logo.png" alt="logo" />
+                        <img src="/images/logo.png" className=" max-[354px]:w-24 h-auto" alt="logo" />
                     </Link>
-                    <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+                    <div className="hidden md:flex flex-1 justify-center" id="navbar-default">
                         <ul className="font-semibold flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                             <li>
-                                <Link  to={"/"} className={`${pathname == "/" ? "text-[#73B458]" : "text-white"}`}>Home</Link>
+                                <Link to={"/"} className={`${pathname == "/" ? "text-[#73B458]" : "text-white"}`}>Home</Link>
                             </li>
                             <li>
                                 <Link to={"/tours"} className={`${pathname == "/tours" ? "text-[#73B458]" : "text-white"}`}>Tours</Link>
                             </li>
                             <li>
-                                <Link  to={"/contact"} className={`${pathname == "/contact" ? "text-[#73B458]" : "text-white"}`}>Contact</Link>
+                                <Link to={"/contact"} className={`${pathname == "/contact" ? "text-[#73B458]" : "text-white"}`}>Contact</Link>
                             </li>
                             {isLoggedIn && (<Link to={"/trips"} className={`${pathname == "/trips" || pathname == "/add-trips" || pathname.includes("/edit-trips") ? "text-[#73B458]" : "text-white"}`} >Trips</Link>)}
                         </ul>
@@ -44,42 +44,62 @@ const Header = () => {
                                 {menu ? '✕' : '☰'}
                             </button>
                         </div>
-                    </div>
-                    {
-                        isLoggedIn ? <button onClick={handleClick} type="button" className="login-btn flex items-center gap-4 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300">
-                            Logout
-                            <i className="bi bi-arrow-right-circle-fill text-xl" />
-                        </button> :
-                            <button onClick={() => {
-                                navigate("/login")
-                            }} type="button" className="login-btn flex items-center gap-4 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300">
-                                Login
+                        {
+                            isLoggedIn ? <button onClick={handleClick} type="button" className="login-btn flex items-center gap-4 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300">
+                                Logout
                                 <i className="bi bi-arrow-right-circle-fill text-xl" />
-                            </button>
-                    }
+                            </button> :
+                                <button onClick={() => {
+                                    navigate("/login")
+                                }} type="button" className="login-btn flex items-center gap-4 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300">
+                                    Login
+                                    <i className="bi bi-arrow-right-circle-fill text-xl" />
+                                </button>
+                        }
+                    </div>
+
                 </div>
             </nav>
             {menu && (
-                <div className="md:hidden flex justify-between fixed top-[0px]  left-0 right-0 bottom-0 bg-[#11221c] z-50 p-6 overflow-y-auto">
-                    <ul className="flex flex-col space-y-4 p-2 font-semibold">
-                        <li>
-                            <Link onClick={() => setMenu(!menu)} to={"/"} className={`${pathname == "/" ? "text-[#73B458]" : "text-white"}`}>Home</Link>
-                        </li>
-                        <li>
-                            <Link onClick={() => setMenu(!menu)} to={"/tours"} className={`${pathname == "/tours" ? "text-[#73B458]" : "text-white"}`}>Tours</Link>
-                        </li>
-                        <li>
-                            <Link onClick={() => setMenu(!menu)} to={"/contact"} className={`${pathname == "/contact" ? "text-[#73B458]" : "text-white"}`}>Contact</Link>
-                        </li>
-                        {isLoggedIn && (<Link to={"/trips"} onClick={() => setMenu(false)} className={`${pathname == "/trips" || pathname == "/add-trips" || pathname.includes("/edit-trips") ? "text-[#73B458]" : "text-white"}`} >Trips</Link>)}
-                    </ul>
-
-                    <div className="md:hidden">
-                        <button onClick={() => setMenu(!menu)} className="text-white text-2xl">
-                            {menu ? '✕' : '☰'}
-                        </button>
+                <div className="md:hidden fixed top-[0px] left-0 right-0 bottom-0 bg-[#11221c] z-50 p-6 overflow-y-auto">
+                    <div>
+                        <div className="flex items-center justify-between">
+                            <Link to={"/"} className="flex items-center space-x-3 rtl:space-x-reverse">
+                                <img src="/images/logo.png" className="max-[354px]:w-24 h-auto" alt="logo" />
+                            </Link>
+                            <div className="flex items-center gap-5">
+                                <div className="md:hidden">
+                                    <button onClick={() => setMenu(!menu)} className="text-white text-2xl">
+                                        {menu ? '✕' : '☰'}
+                                    </button>
+                                </div>
+                                <div>
+                                    {isLoggedIn ? <button onClick={handleClick} type="button" className="login-btn flex items-center gap-4 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300">
+                                        Logout
+                                        <i className="bi bi-arrow-right-circle-fill text-xl" />
+                                    </button> :
+                                        <button onClick={() => {
+                                            navigate("/login")
+                                        }} type="button" className="login-btn flex items-center gap-4 bg-[#73B458] hover:bg-[#F29727] text-white font-medium rounded-full text-sm px-6 py-2 transition-all duration-300">
+                                            Login
+                                            <i className="bi bi-arrow-right-circle-fill text-xl" />
+                                        </button>}
+                                </div>
+                            </div>
+                        </div>
+                        <ul className="flex flex-col space-y-4 p-2 mt-7 font-semibold">
+                            <li>
+                                <Link onClick={() => setMenu(!menu)} to={"/"} className={`${pathname == "/" ? "text-[#73B458]" : "text-white"}`}>Home</Link>
+                            </li>
+                            <li>
+                                <Link onClick={() => setMenu(!menu)} to={"/tours"} className={`${pathname == "/tours" ? "text-[#73B458]" : "text-white"}`}>Tours</Link>
+                            </li>
+                            <li>
+                                <Link onClick={() => setMenu(!menu)} to={"/contact"} className={`${pathname == "/contact" ? "text-[#73B458]" : "text-white"}`}>Contact</Link>
+                            </li>
+                            {isLoggedIn && (<Link to={"/trips"} onClick={() => setMenu(false)} className={`${pathname == "/trips" || pathname == "/add-trips" || pathname.includes("/edit-trips") ? "text-[#73B458]" : "text-white"}`} >Trips</Link>)}
+                        </ul>
                     </div>
-
                 </div>
             )}
         </header>
