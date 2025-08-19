@@ -51,7 +51,7 @@ const TripsTable = ({ trips }) => {
                                         {trip.season}
                                     </td>
                                     <td className="px-6 py-4">
-                                        {trip.price}
+                                        ${Number(trip.price).toLocaleString()}
                                     </td>
                                     <td className="px-6 py-4">
                                         <div className="flex items-center gap-4">
