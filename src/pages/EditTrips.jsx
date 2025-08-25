@@ -82,14 +82,14 @@ const EditTrips = () => {
                             <div className="mb-5">
                                 <label htmlFor="days" className="block mb-2 text-sm font-medium text-gray-900">Days : </label>
                                 <select id="days" onChange={handleChange} value={input.days} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                                    <option valuw="">Select Days</option>
-                                    <option value="1">01</option>
-                                    <option value="2">02</option>
-                                    <option value="3">03</option>
-                                    <option value="4">04</option>
-                                    <option value="5">05</option>
-                                    <option value="6">06</option>
-                                    <option value="7">07</option>
+                                    <option value="">Select Days</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
                                 </select>
                                 {errors.days && <p className="text-red-500 text-sm mt-1">{errors.days}</p>}
                             </div>

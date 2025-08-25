@@ -8,7 +8,7 @@ export let tourCard = [
         place: 7,
         person: 10,
         season: "summer",
-        days: 5,
+        days: "05",
     },
     {
         img: "/images/tour-2.jpg",
@@ -19,7 +19,7 @@ export let tourCard = [
         place: 10,
         person: 20,
         season: "summer",
-        days: 5,
+        days: "05",
     },
     {
         img: "/images/tour-3.jpg",
@@ -30,7 +30,7 @@ export let tourCard = [
         place: 9,
         person: 10,
         season: "summer",
-        days: 7,
+        days: "07",
     },
     {
         img: "/images/tour-4.jpg",
@@ -41,7 +41,7 @@ export let tourCard = [
         place: 5,
         person: 15,
         season: "summer",
-        days: 7,
+        days: "07",
     },
     {
         img: "/images/tour-5.jpg",
@@ -52,7 +52,7 @@ export let tourCard = [
         place: 11,
         person: 17,
         season: "summer",
-        days: 7,
+        days: "07",
     },
     {
         img: "/images/tour-6.jpg",
@@ -63,7 +63,7 @@ export let tourCard = [
         place: 10,
         person: 25,
         season: "summer",
-        days: 7,
+        days: "07",
     },
     {
         img: "/images/tour-7.jpg",
@@ -74,7 +74,7 @@ export let tourCard = [
         place: 10,
         person: 30,
         season: "summer",
-        days: 5,
+        days: "05",
     },
     {
         img: "/images/tour-8.jpg",
@@ -85,6 +85,6 @@ export let tourCard = [
         place: 10,
         person: 12,
         season: "summer",
-        days: 7,
+        days: "07",
     },
 ]
